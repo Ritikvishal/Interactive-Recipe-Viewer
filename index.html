@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Viewer</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <h1>Interactive Recipe Viewer</h1>
+        <input type="text" id="searchInput" placeholder="Search recipes..." onkeyup="searchRecipes()">
+    </header>
+    
+    <section id="filterOptions">
+        <label>
+            <input type="checkbox" id="filterBreakfast" onchange="filterRecipes()"> Breakfast
+        </label>
+        <label>
+            <input type="checkbox" id="filterLunch" onchange="filterRecipes()"> Lunch
+        </label>
+        <label>
+            <input type="checkbox" id="filterDinner" onchange="filterRecipes()"> Dinner
+        </label>
+        <label>
+            <input type="checkbox" id="filterVegetarian" onchange="filterRecipes()"> Vegetarian
+        </label>
+        <label>
+            <input type="checkbox" id="filterVegan" onchange="filterRecipes()"> Vegan
+        </label>
+        <label>
+            <input type="checkbox" id="filterNonveg" onchange="filterRecipes()"> Non-Vegetarian
+        </label>
+    </section>
+
+    <section id="recipeResults">
+        <!-- Recipe cards will be dynamically inserted here by JavaScript -->
+    </section>
+
+    <!-- Recipe Modal (Hidden by default, shown when a recipe is clicked) -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="recipeTitle"></h2>
+            <img id="recipeImage" src="" alt="Recipe Image">
+            <p id="recipeIngredients"></p>
+            <p id="recipeInstructions"></p>
+            <button onclick="saveRecipe()">Save to Favorites</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
